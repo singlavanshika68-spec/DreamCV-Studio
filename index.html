@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DreamCV Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>✦</span> DreamCV
+    </div>
+
+    <nav>
+        <a href="#templates">Templates</a>
+        <a href="#builder">Builder</a>
+        <a href="#features">Features</a>
+    </nav>
+
+    <button class="nav-btn" onclick="scrollToBuilder()">
+        Create CV
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <div class="badge">
+            ✨ Build something that feels like YOU
+        </div>
+
+        <h1>
+            Your story deserves
+            <span>a dream design.</span>
+        </h1>
+
+        <p>
+            Create stunning resumes, professional CVs and
+            creative portfolios using beautiful layouts inspired
+            by modern design platforms.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn" onclick="scrollToBuilder()">
+                Start Creating →
+            </button>
+
+            <button class="secondary-btn" onclick="scrollToTemplates()">
+                Explore Templates
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-preview">
+
+        <div class="floating-card card-one">
+            🎨 25+ layouts
+        </div>
+
+        <div class="floating-card card-two">
+            🪄 AI-ready
+        </div>
+
+        <div class="resume-card">
+
+            <div class="resume-photo">
+                JD
+            </div>
+
+            <h2>JANE DOE</h2>
+
+            <p class="role">CREATIVE DESIGNER</p>
+
+            <hr>
+
+            <h4>PROFILE</h4>
+
+            <p>
+                Creative designer passionate about
+                branding, digital experiences and visual storytelling.
+            </p>
+
+            <h4>EXPERIENCE</h4>
+
+            <p><b>Senior Designer</b><br>
+            Creative Studio · 2024–Present</p>
+
+            <p><b>Visual Designer</b><br>
+            Design Lab · 2022–2024</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TEMPLATE SECTION -->
+
+<section class="templates" id="templates">
+
+    <div class="section-heading">
+
+        <span>DESIGN LIBRARY</span>
+
+        <h2>Find a look that feels like you.</h2>
+
+        <p>
+            From minimal corporate resumes to creative portfolios.
+        </p>
+
+    </div>
+
+
+    <div class="template-filters">
+
+        <button class="filter active" onclick="filterTemplates('all')">
+            All
+        </button>
+
+        <button class="filter" onclick="filterTemplates('resume')">
+            Resume
+        </button>
+
+        <button class="filter" onclick="filterTemplates('creative')">
+            Creative
+        </button>
+
+        <button class="filter" onclick="filterTemplates('minimal')">
+            Minimal
+        </button>
+
+        <button class="filter" onclick="filterTemplates('portfolio')">
+            Portfolio
+        </button>
+
+    </div>
+
+
+    <div class="template-grid">
+
+        <div class="template-item creative">
+
+            <div class="template-preview purple">
+
+                <div class="mini-photo"></div>
+
+                <h3>ALEX MORGAN</h3>
+
+                <p>CREATIVE DESIGNER</p>
+
+                <div class="mini-lines"></div>
+
+            </div>
+
+            <h3>Creative Edge</h3>
+            <p>Bold • Creative • Modern</p>
+
+            <button onclick="selectTemplate('creative')">
+                Use Template
+            </button>
+
+        </div>
+
+
+        <div class="template-item minimal">
+
+            <div class="template-preview clean">
+
+                <h3>JORDAN SMITH</h3>
+
+                <p>PRODUCT DESIGNER</p>
+
+                <hr>
+
+                <div class="mini-lines"></div>
+                <div class="mini-lines"></div>
+                <div class="mini-lines"></div>
+
+            </div>
+
+            <h3>Clean Minimal</h3>
+            <p>Simple • Elegant • Professional</p>
+
+            <button onclick="selectTemplate('minimal')">
+                Use Template
+            </button>
+
+        </div>
+
+
+        <div class="template-item portfolio">
+
+            <div class="template-preview dark">
+
+                <div class="mini-photo"></div>
+
+                <h3>CREATIVE<br>PORTFOLIO</h3>
+
+                <p>DESIGN / PHOTO / ART</p>
+
+            </div>
+
+            <h3>Dark Portfolio</h3>
+            <p>Artistic • Premium • Stylish</p>
+
+            <button onclick="selectTemplate('portfolio')">
+                Use Template
+            </button>
+
+        </div>
+
+
+        <div class="template-item resume">
+
+            <div class="template-preview blue">
+
+                <h3>YOUR NAME</h3>
+
+                <p>SOFTWARE ENGINEER</p>
+
+                <hr>
+
+                <h5>EXPERIENCE</h5>
+
+                <div class="mini-lines"></div>
+                <div class="mini-lines"></div>
+
+            </div>
+
+            <h3>Executive</h3>
+            <p>Corporate • Professional</p>
+
+            <button onclick="selectTemplate('resume')">
+                Use Template
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BUILDER -->
+
+<section class="builder" id="builder">
+
+    <div class="builder-heading">
+
+        <span>BUILD YOUR DREAM CV</span>
+
+        <h2>Design it. Edit it. Make it yours.</h2>
+
+    </div>
+
+
+    <div class="builder-container">
+
+
+        <!-- EDITOR -->
+
+        <div class="editor">
+
+            <div class="editor-tabs">
+
+                <button class="editor-tab active" onclick="showPanel('personal')">
+                    👤 Personal
+                </button>
+
+                <button class="editor-tab" onclick="showPanel('experience')">
+                    💼 Experience
+                </button>
+
+                <button class="editor-tab" onclick="showPanel('education')">
+                    🎓 Education
+                </button>
+
+                <button class="editor-tab" onclick="showPanel('design')">
+                    🎨 Design
+                </button>
+
+            </div>
+
+
+            <!-- PERSONAL -->
+
+            <div class="panel active" id="personal">
+
+                <h3>Personal Information</h3>
+
+                <label>Full Name</label>
+                <input id="nameInput"
+                       type="text"
+                       placeholder="Your name"
+                       oninput="updateCV()">
+
+                <label>Professional Title</label>
+                <input id="roleInput"
+                       type="text"
+                       placeholder="e.g. Software Developer"
+                       oninput="updateCV()">
+
+                <label>Email</label>
+                <input id="emailInput"
+                       type="email"
+                       placeholder="you@email.com"
+                       oninput="updateCV()">
+
+                <label>Phone</label>
+                <input id="phoneInput"
+                       type="text"
+                       placeholder="+91 XXXXX XXXXX"
+                       oninput="updateCV()">
+
+                <label>About You</label>
+
+                <textarea id="aboutInput"
+                          placeholder="Write a short professional introduction..."
+                          oninput="updateCV()"></textarea>
+
+                <label>Profile Picture</label>
+
+                <input type="file"
+                       id="photoInput"
+                       accept="image/*"
+                       onchange="uploadPhoto(event)">
+
+                <div class="photo-options">
+
+                    <button onclick="setPhotoShape('circle')">
+                        ● Circle
+                    </button>
+
+                    <button onclick="setPhotoShape('square')">
+                        ■ Square
+                    </button>
+
+                    <button onclick="setPhotoShape('rounded')">
+                        ▣ Rounded
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPERIENCE -->
+
+            <div class="panel" id="experience">
+
+                <h3>Experience</h3>
+
+                <label>Job Title</label>
+
+                <input id="jobInput"
+                       type="text"
+                       placeholder="Software Developer"
+                       oninput="updateExperience()">
+
+                <label>Company</label>
+
+                <input id="companyInput"
+                       type="text"
+                       placeholder="Company name"
+                       oninput="updateExperience()">
+
+                <label>Experience Description</label>
+
+                <textarea id="experienceInput"
+                          placeholder="Describe what you worked on..."
+                          oninput="updateExperience()"></textarea>
+
+            </div>
+
+
+            <!-- EDUCATION -->
+
+            <div class="panel" id="education">
+
+                <h3>Education</h3>
+
+                <label>Degree</label>
+
+                <input id="degreeInput"
+                       type="text"
+                       placeholder="B.Tech Computer Science"
+                       oninput="updateEducation()">
+
+                <label>College / University</label>
+
+                <input id="collegeInput"
+                       type="text"
+                       placeholder="Your University"
+                       oninput="updateEducation()">
+
+                <label>Year</label>
+
+                <input id="yearInput"
+                       type="text"
+                       placeholder="2024 - 2028"
+                       oninput="updateEducation()">
+
+            </div>
+
+
+            <!-- DESIGN -->
+
+            <div class="panel" id="design">
+
+                <h3>Customize Design</h3>
+
+                <label>Theme Color</label>
+
+                <div class="colors">
+
+                    <button class="color purple-color"
+                            onclick="changeColor('#7c3aed')">
+                    </button>
+
+                    <button class="color blue-color"
+                            onclick="changeColor('#2563eb')">
+                    </button>
+
+                    <button class="color green-color"
+                            onclick="changeColor('#059669')">
+                    </button>
+
+                    <button class="color orange-color"
+                            onclick="changeColor('#ea580c')">
+                    </button>
+
+                    <button class="color pink-color"
+                            onclick="changeColor('#db2777')">
+                    </button>
+
+                </div>
+
+
+                <label>CV Style</label>
+
+                <div class="style-options">
+
+                    <button onclick="changeLayout('modern')">
+                        Modern
+                    </button>
+
+                    <button onclick="changeLayout('classic')">
+                        Classic
+                    </button>
+
+                    <button onclick="changeLayout('creative')">
+                        Creative
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PREVIEW -->
+
+        <div class="preview-area">
+
+            <div class="preview-toolbar">
+
+                <span>LIVE PREVIEW</span>
+
+                <button onclick="printCV()">
+                    📥 Export PDF
+                </button>
+
+            </div>
+
+
+            <div class="cv-paper" id="cvPaper">
+
+                <div class="cv-sidebar">
+
+                    <div class="cv-photo" id="cvPhoto">
+                        YOU
+                    </div>
+
+                    <h2 id="cvName">
+                        YOUR NAME
+                    </h2>
+
+                    <p id="cvRole">
+                        YOUR PROFESSION
+                    </p>
+
+                    <div class="sidebar-section">
+
+                        <h4>CONTACT</h4>
+
+                        <p id="cvEmail">
+                            your@email.com
+                        </p>
+
+                        <p id="cvPhone">
+                            +91 XXXXX XXXXX
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cv-main">
+
+                    <section>
+
+                        <h3>PROFILE</h3>
+
+                        <p id="cvAbout">
+                            Your professional introduction
+                            will appear here.
+                        </p>
+
+                    </section>
+
+
+                    <section>
+
+                        <h3>EXPERIENCE</h3>
+
+                        <h4 id="cvJob">
+                            Your Job Title
+                        </h4>
+
+                        <p id="cvCompany">
+                            Company Name
+                        </p>
+
+                        <p id="cvExperience">
+                            Your experience description
+                            will appear here.
+                        </p>
+
+                    </section>
+
+
+                    <section>
+
+                        <h3>EDUCATION</h3>
+
+                        <h4 id="cvDegree">
+                            Your Degree
+                        </h4>
+
+                        <p id="cvCollege">
+                            University Name
+                        </p>
+
+                        <p id="cvYear">
+                            2024 - 2028
+                        </p>
+
+                    </section>
+
+
+                    <section>
+
+                        <h3>SKILLS</h3>
+
+                        <div class="skills">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Design</span>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+    <div class="section-heading">
+
+        <span>WHY DREAMCV?</span>
+
+        <h2>More than just a resume builder.</h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div>🎨</div>
+
+            <h3>Design Freedom</h3>
+
+            <p>
+                Mix layouts, colors, fonts and visual styles
+                to create something unique.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div>🖼️</div>
+
+            <h3>Visual Profiles</h3>
+
+            <p>
+                Add profile photos, project images and
+                creative visual sections.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div>⚡</div>
+
+            <h3>Live Editing</h3>
+
+            <p>
+                Every change appears instantly in your
+                resume preview.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div>📄</div>
+
+            <h3>PDF Ready</h3>
+
+            <p>
+                Print your finished resume or save it
+                as a PDF.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        ✦ DreamCV
+    </div>
+
+    <p>
+        Design your story. Build your future.
+    </p>
+
+    <p class="copyright">
+        © 2026 DreamCV Studio
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
